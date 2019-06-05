@@ -1,0 +1,21 @@
+<!--Topics项目菜单页面-->
+
+
+<!--继承模板-->
+{% extends "logs/base.html" %}
+
+
+<!--子页面的内容，对应模板中的预留块-->
+<!--p为段落标签，ul为无序列表，li为列表项目-->
+{% block content %}
+  <p>Topics</p>
+  <ul>
+    {% for topic in topics %}
+      <li>
+        <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+      </li>
+    {% empty %}
+      <li>No topics have been added yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

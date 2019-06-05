@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--模板页，该部分在每个子页面都存在-->
+<!--href为超链接，后面指定超链接目标，
+此处为指向learning_logs空间(在根目录.urls中定义)中的index视图函数，后面Learning Log为超链接显示的名称-->
+<p>
+    <a href="{% url 'learning_logs:index' %}" >Learning Log</a> -
+    <a href="{% url 'learning_logs:topics' %}" >Topics</a>
+</p>
+
+
+
+<!--子页面的块，在子页面中补全-->
+{% block content %}{% endblock content %}
